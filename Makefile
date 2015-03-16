@@ -15,10 +15,10 @@
 all: clean osx linux
 
 clean:
-	find . -type f -perm +111 -name 'indefatigable*' | xargs rm
+	find . -type f -perm +111 -name 'indefatigable_*' | xargs rm
 
 osx:
-	go build
+	gox -osarch="darwin/amd64"
 
 linux:
 	gox -osarch="linux/amd64"
